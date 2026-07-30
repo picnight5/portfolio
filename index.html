@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — XR开发 | VR交互 | Unity Gameplay</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --card: #1a1a1a;
+    --text: #e0e0e0;
+    --muted: #888;
+    --accent: #fff;
+    --tag-bg: #252525;
+    --border: #2a2a2a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Noto Sans SC", "PingFang SC", sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 80px 0 48px; text-align: center;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 64px;
+  }
+  .hero h1 { font-size: 28px; font-weight: 600; letter-spacing: -.5px; }
+  .hero .tagline { color: var(--muted); font-size: 15px; margin-top: 8px; }
+  .hero .contact-row { margin-top: 20px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .hero .contact-row a {
+    color: var(--muted); text-decoration: none; font-size: 14px;
+    border-bottom: 1px solid transparent; transition: .2s;
+  }
+  .hero .contact-row a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ── About ── */
+  .about {
+    margin-bottom: 72px; padding: 32px;
+    background: var(--card); border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .about h2 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+  .about p { color: var(--muted); font-size: 15px; max-width: 600px; }
+
+  /* ── Project ── */
+  .project { margin-bottom: 80px; }
+  .project-header { margin-bottom: 16px; }
+  .project-header .num { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+  .project-header h2 { font-size: 24px; font-weight: 600; margin-top: 4px; }
+
+  .video-wrap {
+    position: relative; width: 100%;
+    background: #000; border-radius: 10px; overflow: hidden;
+    margin-bottom: 24px; border: 1px solid var(--border);
+  }
+  .video-wrap video { width: 100%; display: block; }
+  .video-placeholder {
+    aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
+    color: var(--muted); font-size: 14px;
+    background: #111; border-radius: 10px; border: 1px dashed var(--border);
+    margin-bottom: 24px;
+  }
+
+  .section { margin-bottom: 24px; }
+  .section h3 { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+
+  .contrib-list { list-style: none; }
+  .contrib-list li {
+    position: relative; padding-left: 18px; margin-bottom: 6px;
+    font-size: 15px; color: #ccc;
+  }
+  .contrib-list li::before {
+    content: "→"; position: absolute; left: 0; color: var(--muted);
+  }
+
+  .desc-block { font-size: 15px; color: #ccc; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .tag {
+    padding: 4px 12px; font-size: 12px; border-radius: 20px;
+    background: var(--tag-bg); color: var(--muted);
+    border: 1px solid var(--border);
+  }
+
+  /* ── Other Projects ── */
+  .other {
+    margin-bottom: 80px; padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .other h2 { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+  .mini-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 18px; transition: .2s;
+  }
+  .mini-card:hover { border-color: #444; }
+  .mini-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .mini-card p { font-size: 13px; color: var(--muted); }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center; padding: 48px 0;
+    color: var(--muted); font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .hero { padding: 48px 0 32px; }
+    .hero h1 { font-size: 22px; }
+    .card-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════ HERO ════════════ -->
+<div class="hero">
+  <h1>[你的名字]</h1>
+  <p class="tagline">北航 虚拟现实技术 · XR开发 | VR交互 | Unity Gameplay</p>
+  <div class="contact-row">
+    <a href="#">GitHub</a>
+    <a href="#">B站</a>
+    <a href="#">邮箱</a>
+    <a href="#">知乎</a>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ════════════ ABOUT ME ════════════ -->
+<div class="about">
+  <h2>About Me</h2>
+  <p>
+    北航虚拟现实技术专业本科生，关注XR交互与VR游戏开发。<br>
+    我喜欢将技术转化为玩家能直接感受到的体验——过去两年通过学术项目复现和独立游戏制作，
+    探索了从底层交互实现到用户反馈优化的完整流程。<br>
+    希望成长为连接技术实现与体验设计的XR开发者。
+  </p>
+</div>
+
+<!-- ════════════ PROJECT 01 ════════════ -->
+<div class="project">
+  <div class="project-header">
+    <div class="num">Project 01</div>
+    <h2>3D 触觉重定向</h2>
+  </div>
+
+  <!-- ▼ 替换 src 为你的视频路径 -->
+  <div class="video-placeholder">
+    🎬 触觉重定向 Demo 视频（30秒）— 替换为 &lt;video src="demo.mp4" controls&gt;&lt;/video&gt;
+  </div>
+
+  <div class="section">
+    <h3>一句话概述</h3>
+    <p class="desc-block">
+      将现实中的物理方块映射到VR环境，使用户能够在虚拟世界中自然抓取并感受到真实的触觉反馈。
+    </p>
+  </div>
+
+  <div class="section">
+    <h3>我的贡献</h3>
+    <ul class="contrib-list">
+      <li>基于 ArUco 标记 + 深度相机搭建物理方块追踪方案</li>
+      <li>完成现实坐标系 → Unity 虚拟空间的完整坐标映射</li>
+      <li>实现 VR 交互逻辑与 PICO + OpenXR 设备适配</li>
+      <li>设计候选过滤的事件驱动架构，替代逐帧轮询</li>
+      <li>协程分帧处理重定向计算与场景过渡，保障72fps稳定运行</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>技术挑战</h3>
+    <p class="desc-block">
+      相机空间 → 世界空间 → 物理交互空间的三层坐标转换链；候选过滤在精度与性能之间的阈值设计；
+      VR场景下GC控制与帧率稳定性保障。
+    </p>
+  </div>
+
+  <div class="tags">
+    <span class="tag">PICO</span><span class="tag">OpenXR</span><span class="tag">Unity C#</span>
+    <span class="tag">ArUco</span><span class="tag">坐标转换</span><span class="tag">事件驱动</span>
+    <span class="tag">协程</span><span class="tag">GC优化</span><span class="tag">3D数学</span>
+  </div>
+</div>
+
+<!-- ════════════ PROJECT 02 ════════════ -->
+<div class="project">
+  <div class="project-header">
+    <div class="num">Project 02</div>
+    <h2>UGC 游戏开发实践</h2>
+  </div>
+
+  <!-- ▼ 替换为你的B站视频嵌入代码或本地视频 -->
+  <div class="video-placeholder">
+    🎬 UGC 游戏宣传视频 — 替换为B站嵌入代码或 &lt;video&gt;
+  </div>
+
+  <div class="section">
+    <h3>玩法概述</h3>
+    <p class="desc-block">
+      [一句话描述游戏类型和核心玩法，例如：基于原神IP的UGC关卡编辑器，玩家可以在3D场景中自由放置机关、设计谜题并分享给其他玩家挑战]
+    </p>
+  </div>
+
+  <div class="section">
+    <h3>我的贡献</h3>
+    <ul class="contrib-list">
+      <li>设计并实现关卡编辑器的核心交互与场景搭建逻辑</li>
+      <li>[补充：你具体负责的模块，如UI系统 / 存档系统 / 物理交互]</li>
+      <li>[补充：协作情况，如独立开发 / 与N人团队分工]</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>玩家反馈</h3>
+    <p class="desc-block">
+      [如果B站视频有播放量/评论/反馈，摘录一两条能体现项目价值的，例如：B站播放量XXX，玩家评论"XXX"]
+    </p>
+  </div>
+
+  <div class="tags">
+    <span class="tag">Unity C#</span><span class="tag">关卡编辑器</span><span class="tag">UGUI</span>
+    <span class="tag">游戏设计</span><span class="tag">[补充其他技术栈]</span>
+  </div>
+</div>
+
+<!-- ════════════ OTHER PROJECTS ════════════ -->
+<div class="other">
+  <h2>Other XR Experiments</h2>
+  <div class="card-grid">
+
+    <div class="mini-card">
+      <h4>VR 商场</h4>
+      <p>PICO 平台虚拟商场漫游与商品交互原型</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>动作捕捉</h4>
+      <p>基于[设备名]的动捕数据驱动虚拟角色</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>数字人</h4>
+      <p>[一句话描述]</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>AI 生成场景</h4>
+      <p>[一句话描述]</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════ FOOTER ════════════ -->
+<div class="footer">
+  [你的名字] · [邮箱] · 持续学习中
+</div>
+
+</div><!-- /.container -->
+</body>
+</html>
