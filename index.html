@@ -32,7 +32,7 @@
   .hero h1 { font-size: 28px; font-weight: 600; letter-spacing: -.5px; }
   .hero .tagline { color: var(--muted); font-size: 15px; margin-top: 8px; }
   .hero .contact-row { margin-top: 20px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-  .hero .contact-row a {
+  .hero .contact-row a, .hero .contact-row span {
     color: var(--muted); text-decoration: none; font-size: 14px;
     border-bottom: 1px solid transparent; transition: .2s;
   }
@@ -57,8 +57,12 @@
     position: relative; width: 100%;
     background: #000; border-radius: 10px; overflow: hidden;
     margin-bottom: 24px; border: 1px solid var(--border);
+    aspect-ratio: 16 / 9;
   }
-  .video-wrap video { width: 100%; display: block; }
+  .video-wrap video, .video-wrap iframe {
+    width: 100%; height: 100%; display: block;
+    border: none;
+  }
   .video-placeholder {
     aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
     color: var(--muted); font-size: 14px;
@@ -126,7 +130,7 @@
   <div class="contact-row">
     <a href="https://github.com/picnight5">GitHub</a>
     <a href="https://space.bilibili.com/374803586">B站</a>
-    <a href="mailto:2958277450@qq.com">邮箱</a>
+    <span>2958277450@qq.com</span>
   </div>
 </div>
 
@@ -150,9 +154,8 @@
     <h2>3D 触觉重定向</h2>
   </div>
 
-  <!-- ▼ 替换 src 为你的视频路径 -->
-  <div class="video-placeholder">
-    🎬 触觉重定向 Demo 视频（30秒）— 替换为 &lt;video src="demo.mp4" controls&gt;&lt;/video&gt;
+  <div class="video-wrap">
+    <iframe src="//player.bilibili.com/player.html?bvid=BV1smGc6VErz&high_quality=1" scrolling="no" frameborder="no" allowfullscreen="true"></iframe>
   </div>
 
   <div class="section">
@@ -178,6 +181,17 @@
     <p class="desc-block">
       相机空间 → 世界空间 → 物理交互空间的三层坐标转换链；候选过滤在精度与性能之间的阈值设计；
       VR场景下GC控制与帧率稳定性保障。
+    </p>
+  </div>
+
+  <div class="section">
+    <h3>未来展望</h3>
+    <p class="desc-block">
+      当前方案依赖统一规格的物理代理（四柱基座 + 标准方块），适合线下门店统一部署。
+      下一步想探索的是<strong>居家场景的去标准化</strong>：用户在系统指引下，随手拿起桌边的水杯、书本、遥控器，
+      放置在指定位置——由系统实时注册为临时物理代理。不同形状的日常物品被映射到不同虚拟交互点上，
+      实现「无需专用硬件，家里的东西就是你的触觉道具」。这让触觉重定向从商业场馆走向普通家庭，
+      是VR触觉普及的关键一步。
     </p>
   </div>
 
