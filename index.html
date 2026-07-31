@@ -159,46 +159,38 @@
   </div>
 
   <div class="section">
-    <h3>一句话概述</h3>
+    <h3>项目简介</h3>
     <p class="desc-block">
-      将现实中的物理方块映射到VR环境，使用户能够在虚拟世界中自然抓取并感受到真实的触觉反馈。
+      VR中用户伸手抓取虚拟方块时，现实中的物理方块可能位于另一个位置。如果采用1:1映射，视觉中的抓取动作将无法获得对应的触觉反馈。
+      3D触觉重定向在用户无感知的情况下微调手部运动路径，使虚拟抓取位置与现实物理位置重新对齐。
+      通过动态调整虚拟与现实之间的空间映射关系，同一物理代理可对应多个虚拟交互位置，从而扩展单一实体道具的使用范围。
     </p>
   </div>
 
   <div class="section">
-    <h3>我的贡献</h3>
+    <h3>我的工作：Unity VR交互原型开发</h3>
     <ul class="contrib-list">
-      <li>基于 ArUco 标记 + 深度相机搭建物理方块追踪方案</li>
-      <li>完成现实坐标系 → Unity 虚拟空间的完整坐标映射</li>
-      <li>实现 VR 交互逻辑与 PICO + OpenXR 设备适配</li>
-      <li>设计候选过滤的事件驱动架构，替代逐帧轮询</li>
-      <li>协程分帧处理重定向计算与场景过渡，保障72fps稳定运行</li>
+      <li>设计物理方块追踪方案（ArUco Marker + 深度相机）</li>
+      <li>实现现实空间与 Unity 虚拟空间坐标映射</li>
+      <li>基于 PICO 4 + OpenXR 实现 VR 交互逻辑</li>
+      <li>将重定向算法接入 Unity，完成可体验的 VR 交互原型</li>
     </ul>
-  </div>
-
-  <div class="section">
-    <h3>技术挑战</h3>
-    <p class="desc-block">
-      相机空间 → 世界空间 → 物理交互空间的三层坐标转换链；候选过滤在精度与性能之间的阈值设计；
-      VR场景下GC控制与帧率稳定性保障。
-    </p>
   </div>
 
   <div class="section">
     <h3>未来展望</h3>
     <p class="desc-block">
-      当前方案依赖统一规格的物理代理（四柱基座 + 标准方块），适合线下门店统一部署。
-      下一步想探索的是<strong>居家场景的去标准化</strong>：用户在系统指引下，随手拿起桌边的水杯、书本、遥控器，
-      放置在指定位置——由系统实时注册为临时物理代理。不同形状的日常物品被映射到不同虚拟交互点上，
-      实现「无需专用硬件，家里的东西就是你的触觉道具」。这让触觉重定向从商业场馆走向普通家庭，
-      是VR触觉普及的关键一步。
+      <strong>多场景XR体验部署</strong>：通过统一规格的物理代理覆盖不同虚拟场景中的交互需求，减少实体道具重复制作与布置成本。
+      场景切换主要依赖软件配置与空间映射调整，更适用于娱乐、教育培训、工业模拟等需要高沉浸交互的XR应用。
+    </p>
+    <p class="desc-block" style="margin-top: 16px;">
+      <strong>居家XR交互</strong>：未来用户无需依赖专用触觉设备，可通过系统注册环境中的日常物体，将其作为临时物理代理，实现低成本、自然化的XR交互体验。
     </p>
   </div>
 
   <div class="tags">
-    <span class="tag">PICO</span><span class="tag">OpenXR</span><span class="tag">Unity C#</span>
-    <span class="tag">ArUco</span><span class="tag">坐标转换</span><span class="tag">事件驱动</span>
-    <span class="tag">协程</span><span class="tag">GC优化</span><span class="tag">3D数学</span>
+    <span class="tag">Unity XR</span><span class="tag">PICO 4</span><span class="tag">物体追踪</span>
+    <span class="tag">虚实映射</span><span class="tag">触觉重定向</span>
   </div>
 </div>
 
