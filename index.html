@@ -11,12 +11,13 @@
     --text: #e0e0e0;
     --muted: #888;
     --accent: #fff;
+    --highlight: #c4a97d;
     --tag-bg: #252525;
     --border: #2a2a2a;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
-    background: var(--bg); color: var(--text);
+    background: radial-gradient(ellipse at 50% 0%, #141210 0%, var(--bg) 55%); color: var(--text);
     font-family: -apple-system, "Noto Sans SC", "PingFang SC", sans-serif;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
@@ -29,7 +30,7 @@
     border-bottom: 1px solid var(--border);
     margin-bottom: 64px;
   }
-  .hero h1 { font-size: 28px; font-weight: 600; letter-spacing: -.5px; }
+  .hero h1 { font-size: 32px; font-weight: 700; letter-spacing: -.5px; }
   .hero .tagline { color: var(--muted); font-size: 15px; margin-top: 8px; }
   .hero .contact-row { margin-top: 20px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
   .hero .contact-row a, .hero .contact-row span {
@@ -44,14 +45,14 @@
     background: var(--card); border-radius: 10px;
     border: 1px solid var(--border);
   }
-  .about h2 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+  .about h2 { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--highlight); }
   .about p { color: var(--muted); font-size: 15px; max-width: 600px; }
 
   /* ── Project ── */
   .project { margin-bottom: 80px; }
   .project-header { margin-bottom: 16px; }
-  .project-header .num { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
-  .project-header h2 { font-size: 24px; font-weight: 600; margin-top: 4px; }
+  .project-header .num { color: var(--highlight); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; }
+  .project-header h2 { font-size: 28px; font-weight: 700; margin-top: 4px; }
 
   .video-wrap {
     position: relative; width: 100%;
@@ -72,7 +73,7 @@
   }
 
   .section { margin-bottom: 24px; }
-  .section h3 { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .section h3 { font-size: 13px; color: var(--highlight); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
 
   .contrib-list { list-style: none; }
   .contrib-list li {
@@ -97,7 +98,7 @@
     margin-bottom: 80px; padding-top: 24px;
     border-top: 1px solid var(--border);
   }
-  .other h2 { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+  .other h2 { font-size: 18px; font-weight: 600; margin-bottom: 20px; color: var(--highlight); }
   .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
   .mini-card {
     background: var(--card); border: 1px solid var(--border); border-radius: 8px;
