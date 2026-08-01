@@ -59,10 +59,11 @@
     margin-bottom: 24px; border: 1px solid var(--border);
     aspect-ratio: 16 / 9;
   }
-  .video-wrap video, .video-wrap iframe {
+  .video-wrap video, .video-wrap iframe, .video-wrap img {
     width: 100%; height: 100%; display: block;
-    border: none;
+    border: none; object-fit: contain;
   }
+  .caption { text-align: center; color: var(--muted); font-size: 13px; margin: 8px 0 24px; }
   .video-placeholder {
     aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
     color: var(--muted); font-size: 14px;
@@ -243,6 +244,51 @@
   </div>
 </div>
 
+<!-- ════════════ PROJECT 03 ════════════ -->
+<div class="project">
+  <div class="project-header">
+    <div class="num">Project 03</div>
+    <h2>实时渲染管线实践</h2>
+  </div>
+
+  <div class="video-wrap" style="background: #1a1a1a;">
+    <img src="https://raw.githubusercontent.com/picnight5/Real-Time-Rendering-Practice/master/shadow-mapping/images/Shadow%20Mapping.png" alt="Shadow Mapping">
+  </div>
+  <p class="caption">基于 OpenGL 实现实时阴影渲染，支持 PCF 软阴影与双 Pass 渲染流程</p>
+
+  <div class="section">
+    <h3>项目简介</h3>
+    <p class="desc-block">
+      基于 OpenGL + C++ 实践实时渲染核心流程，围绕空间变换、Shader 编程与光照计算，建立 Unity XR 开发所需的图形学基础。
+    </p>
+  </div>
+
+  <div class="section">
+    <h3>核心模块</h3>
+    <p class="desc-block"><strong>Shadow Mapping</strong> — 基于 GLSL 实现 Phong 光照模型与基于深度贴图的实时阴影渲染管线，支持 PCF 软阴影与双 Pass 渲染。</p>
+    <p class="desc-block" style="margin-top: 8px;"><strong>Ray Tracing</strong> — 实现光线追踪器，构建 BVH 层次包围盒加速结构与材质系统。</p>
+    <p class="desc-block" style="margin-top: 8px;"><strong>QEM 网格简化</strong> — 基于 Quadric Error Metrics 实现边坍缩网格简化算法。</p>
+  </div>
+
+  <div class="section">
+    <h3>我的工作</h3>
+    <ul class="contrib-list">
+      <li>实现 Phong 与 Shadow Mapping 着色器（GLSL），完成实时阴影渲染流程</li>
+      <li>实现 Model / View / Projection 空间变换矩阵及双 Pass 渲染流程</li>
+      <li>实现基于 BVH 加速的光线追踪器，支持多种几何体与材质</li>
+      <li>实现基于 QEM 的网格简化算法，支持按比例控制模型面数</li>
+    </ul>
+    <p style="margin-top: 12px; font-size: 14px;">
+      <a href="https://github.com/picnight5/Real-Time-Rendering-Practice" style="color: var(--muted);">GitHub → Real-Time-Rendering-Practice</a>
+    </p>
+  </div>
+
+  <div class="tags">
+    <span class="tag">OpenGL</span><span class="tag">GLSL Shader</span><span class="tag">Shadow Mapping</span>
+    <span class="tag">Ray Tracing</span><span class="tag">几何处理</span>
+  </div>
+</div>
+
 <!-- ════════════ OTHER PROJECTS ════════════ -->
 <div class="other">
   <h2>Other XR Experiments</h2>
@@ -258,15 +304,6 @@
       <p>基于[设备名]的动捕数据驱动虚拟角色</p>
     </div>
 
-    <div class="mini-card">
-      <h4>数字人</h4>
-      <p>[一句话描述]</p>
-    </div>
-
-    <div class="mini-card">
-      <h4>AI 生成场景</h4>
-      <p>[一句话描述]</p>
-    </div>
 
   </div>
 </div>
