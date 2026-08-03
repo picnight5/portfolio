@@ -16,13 +16,15 @@
     --border: #2a2a2a;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
   body {
     background: radial-gradient(ellipse at 50% 0%, #141210 0%, var(--bg) 55%); color: var(--text);
     font-family: -apple-system, "Noto Sans SC", "PingFang SC", sans-serif;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
 
   /* ── Hero ── */
   .hero {
@@ -30,8 +32,8 @@
     border-bottom: 1px solid var(--border);
     margin-bottom: 64px;
   }
-  .hero h1 { font-size: 32px; font-weight: 700; letter-spacing: -.5px; }
-  .hero .tagline { color: var(--muted); font-size: 15px; margin-top: 8px; }
+  .hero h1 { font-size: 36px; font-weight: 700; letter-spacing: -.5px; }
+  .hero .tagline { color: var(--muted); font-size: 16px; margin-top: 8px; }
   .hero .contact-row { margin-top: 20px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
   .hero .contact-row a, .hero .contact-row span {
     color: var(--muted); text-decoration: none; font-size: 14px;
@@ -45,14 +47,18 @@
     background: var(--card); border-radius: 10px;
     border: 1px solid var(--border);
   }
-  .about h2 { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--highlight); }
-  .about p { color: var(--muted); font-size: 15px; max-width: 600px; }
+  .about h2 { font-size: 36px; font-weight: 700; margin-bottom: 12px; color: var(--highlight); }
+  .about p { color: #ccc; font-size: 16px; max-width: 640px; }
 
   /* ── Project ── */
-  .project { margin-bottom: 80px; }
+  .project {
+    margin-bottom: 48px; padding: 40px;
+    background: var(--card); border-radius: 12px;
+    border: 1px solid var(--border);
+  }
   .project-header { margin-bottom: 16px; }
-  .project-header .num { color: var(--highlight); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; }
-  .project-header h2 { font-size: 28px; font-weight: 700; margin-top: 4px; }
+  .project-header .num { color: var(--highlight); font-size: 32px; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; }
+  .project-header h2 { font-size: 36px; font-weight: 700; margin-top: 4px; }
 
   .video-wrap {
     position: relative; width: 100%;
@@ -73,18 +79,18 @@
   }
 
   .section { margin-bottom: 24px; }
-  .section h3 { font-size: 13px; color: var(--highlight); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .section h3 { font-size: 17px; color: var(--highlight); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
 
   .contrib-list { list-style: none; }
   .contrib-list li {
     position: relative; padding-left: 18px; margin-bottom: 6px;
-    font-size: 15px; color: #ccc;
+    font-size: 16px; color: #ccc;
   }
   .contrib-list li::before {
     content: "→"; position: absolute; left: 0; color: var(--muted);
   }
 
-  .desc-block { font-size: 15px; color: #ccc; }
+  .desc-block { font-size: 16px; color: #ccc; }
 
   .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
   .tag {
@@ -98,15 +104,24 @@
     margin-bottom: 80px; padding-top: 24px;
     border-top: 1px solid var(--border);
   }
-  .other h2 { font-size: 18px; font-weight: 600; margin-bottom: 20px; color: var(--highlight); }
-  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
-  .mini-card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
-    padding: 18px; transition: .2s;
+  .other h2 { font-size: 28px; font-weight: 700; margin-bottom: 20px; color: var(--highlight); }
+  .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .exp-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    overflow: hidden; transition: .2s;
   }
-  .mini-card:hover { border-color: #444; }
-  .mini-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-  .mini-card p { font-size: 13px; color: var(--muted); }
+  .exp-card:hover { border-color: #444; }
+  .exp-video {
+    aspect-ratio: 16/9; background: #000;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-video iframe, .exp-video img, .exp-video video {
+    width: 100%; height: 100%; display: block; border: none;
+    object-fit: contain;
+  }
+  .exp-text { padding: 18px; }
+  .exp-text h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+  .exp-text p { font-size: 14px; color: var(--muted); }
 
   /* ── Footer ── */
   .footer {
@@ -119,7 +134,7 @@
   @media (max-width: 600px) {
     .hero { padding: 48px 0 32px; }
     .hero h1 { font-size: 22px; }
-    .card-grid { grid-template-columns: 1fr 1fr; }
+    .exp-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -128,7 +143,7 @@
 <!-- ════════════ HERO ════════════ -->
 <div class="hero">
   <h1>拾光不拾梦</h1>
-  <p class="tagline">北航 虚拟现实技术 · XR开发 | VR交互 | Unity Gameplay</p>
+  <p class="tagline">北京航空航天大学 虚拟现实技术 · XR 交互开发 | Unity</p>
   <div class="contact-row">
     <a href="https://github.com/picnight5">GitHub</a>
     <a href="https://space.bilibili.com/374803586">B站</a>
@@ -136,16 +151,15 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container" id="projects">
 
 <!-- ════════════ ABOUT ME ════════════ -->
-<div class="about">
+<div class="about" id="about">
   <h2>About Me</h2>
   <p>
-    北航虚拟现实技术专业本科生，关注XR交互与VR游戏开发。<br>
-    我喜欢将技术转化为玩家能直接感受到的体验——过去两年通过学术项目复现和独立游戏制作，
-    探索了从底层交互实现到用户反馈优化的完整流程。<br>
-    希望成长为连接技术实现与体验设计的XR开发者。
+    北航虚拟现实技术专业本科生，关注 XR 交互开发与虚拟世界构建。<br>
+    喜欢将技术转化为可感知的交互体验，重视工程实现与用户感受之间的连接。<br>
+    希望成长为兼具技术能力、用户视角与产品意识的 XR 开发者。
   </p>
 </div>
 
@@ -189,6 +203,10 @@
       <strong>居家XR交互</strong>：未来用户无需依赖专用触觉设备，可通过系统注册环境中的日常物体，将其作为临时物理代理，实现低成本、自然化的XR交互体验。
     </p>
   </div>
+
+    <p style="margin-top: 12px; font-size: 14px;">
+      <a href="https://github.com/picnight5/VR-Haptic-Retargeting" style="color: var(--muted);">GitHub → VR-Haptic-Retargeting</a>
+    </p>
 
   <div class="tags">
     <span class="tag">Unity XR</span><span class="tag">PICO 4</span><span class="tag">物体追踪</span>
@@ -292,19 +310,68 @@
 
 <!-- ════════════ OTHER PROJECTS ════════════ -->
 <div class="other">
-  <h2>Other XR Experiments</h2>
-  <div class="card-grid">
+  <h2>More Explorations</h2>
+  <div class="exp-grid">
 
-    <div class="mini-card">
-      <h4>VR 商场</h4>
-      <p>PICO 平台虚拟商场漫游与商品交互原型</p>
+    <div class="exp-card">
+      <div class="exp-video">
+        <img src="images/foveated.png" alt="注视点绘制效果">
+      </div>
+      <div class="exp-text">
+        <h4>注视点绘制</h4>
+        <p>了解 Kernel Foveated Rendering 管线原理，实现 G-Buffer 坐标映射与逆变换 Shader，验证注视点绘制对渲染性能的优化效果</p>
+      </div>
     </div>
 
-    <div class="mini-card">
-      <h4>动作捕捉</h4>
-      <p>基于[设备名]的动捕数据驱动虚拟角色</p>
+    <div class="exp-card">
+      <div class="exp-video">
+        <iframe src="//player.bilibili.com/player.html?bvid=BV1oqaGztEEx&high_quality=1&autoplay=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe>
+      </div>
+      <div class="exp-text">
+        <h4>VR 商场</h4>
+        <p>基于 PICO 平台，探索语音+眼动追踪在VR购物场景中的应用，实现更自然的XR交互体验</p>
+      </div>
     </div>
 
+    <div class="exp-card">
+      <div class="exp-video">
+        <iframe src="//player.bilibili.com/player.html?bvid=BV1MBaLzsEyC&high_quality=1&autoplay=0" scrolling="no" frameborder="no" allowfullscreen="true"></iframe>
+      </div>
+      <div class="exp-text">
+        <h4>动作捕捉小剧场</h4>
+        <p>基于摄像头 + OpenCV 实时捕捉人体姿态，驱动虚拟角色完成创意短剧表演，探索低成本动捕方案</p>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-video">
+        <img src="images/digital-twin.jpg" alt="数字孪生场景">
+      </div>
+      <div class="exp-text">
+        <h4>数字孪生交互场景</h4>
+        <p>基于 Unity + DTS 平台搭建数字孪生场景，接入 IoT 设备数据与大模型 API，实现虚拟场景中的实时数据可视化与设备反控交互</p>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-video">
+        <img src="images/digital-human.gif" alt="数字人驱动效果">
+      </div>
+      <div class="exp-text">
+        <h4>数字人重建与驱动</h4>
+        <p>基于 GART + VIBE，从单段动作视频重建 SMPL 姿态参数，驱动 3D 数字人生成对应动作图像</p>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-video">
+        <img src="images/llm-scene.png" alt="LLM场景生成效果">
+      </div>
+      <div class="exp-text">
+        <h4>LLM 场景生成</h4>
+        <p>基于 HoloDeck 框架，通过 Prompt Engineering 引导 LLM 分阶段生成室内 3D 场景并导入 Unity 实时渲染</p>
+      </div>
+    </div>
 
   </div>
 </div>
